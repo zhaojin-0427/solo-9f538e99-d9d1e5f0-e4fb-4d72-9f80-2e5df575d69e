@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      REPRINT_DB: /data/reprint.db
+    volumes:
+      - reprint-data:/data
+    restart: unless-stopped
+
+volumes:
+  reprint-data:
